@@ -269,10 +269,10 @@ if (( ${ARCHIVE_FOR_DISTRIBUTION} )); then
 			wine ~/.wine/drive_c/Program\ Files/NSIS/makensis.exe /DVERSION=${BUILD_NAME} scripts/win32/installer.nsi
 			mv scripts/win32/Cura_${BUILD_NAME}.exe ./
 		fi
-		if [ -f '/c/Program Files (x86)/NSIS/makensis.exe' ]; then
+		if [ -f '/cygdrive/c/Program Files (x86)/NSIS/makensis.exe' ]; then
 			rm -rf scripts/win32/dist
 			mv `pwd`/${TARGET_DIR} scripts/win32/dist
-			'/c/Program Files (x86)/NSIS/makensis.exe' -DVERSION=${BUILD_NAME} 'scripts/win32/installer.nsi' >> log.txt
+			'/cygdrive/c/Program Files (x86)/NSIS/makensis.exe' -DVERSION=${BUILD_NAME} 'scripts/win32/installer.nsi' >> log.txt
 			mv scripts/win32/Cura_${BUILD_NAME}.exe ./
 		fi
 	else
